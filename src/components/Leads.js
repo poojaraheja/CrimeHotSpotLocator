@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
-import Footer from "./Footer";
 
 const Leads = () => {
 	sessionStorage.removeItem("payment_id");
@@ -136,7 +135,6 @@ const Leads = () => {
 							id="lead_table"
 							className="lead_table "></div>
 					</div>
-					<Footer />
 				</div>
 			</div>
 		</div>
