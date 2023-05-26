@@ -5,7 +5,7 @@ import { Fragment } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-const AddPayments = () => {
+const CrimeIssue = () => {
 	let history = useNavigate();
 	const [Inputs, setInputs] = useState({});
 
@@ -45,10 +45,10 @@ const AddPayments = () => {
 		e.preventDefault();
 
 		axios
-			.post("http://localhost:80/Crime/addcrimerecord.php", Inputs)
+			.post("http://localhost:80/crime-api/addcrimeissue.php", Inputs)
 			.then((result) => {
 				if (result.data.create === 1) {
-					alert("Customer created successfully!");
+					alert("Crime Issue added successfully!");
 					history("/records");
 				} else {
 					alert("Internal Server Error");
@@ -106,30 +106,30 @@ const AddPayments = () => {
 								</div>
 							</div>
 
-							<h3>Add Crime Record</h3>
+							<h3>Post Crime Issue</h3>
 							<label className="form-group">
 								<input
 									type="text"
-									name="crimetitle"
+									name="name"
 									id="email"
 									// onChange={handleChange}
 									className="form-control1"
 									required
 								/>
-								<span style={{ color: "#00ade6" }}>Crime Title</span>
+								<span style={{ color: "#00ade6" }}>Full Name</span>
 								<span className="border"></span>
 							</label>
 
 							<label className="form-group">
 								<input
-									type="text"
-									name="crimeaddress"
+									type="number"
+									name="number"
 									id="email"
 									// onChange={handleChange}
 									className="form-control1"
 									required
 								/>
-								<span for="">Crime Address</span>
+								<span for="">Mobile Number</span>
 								<span className="border"></span>
 							</label>
 
@@ -153,42 +153,54 @@ const AddPayments = () => {
 							<label className="form-group">
 								<input
 									className="form-control1"
-									type="number"
+									type="text"
 									// onChange={handleChange}
-									name="location_map_latitude"
+									name="crime_scene_title"
 									id="amount_to_pay"
 									required
 								/>
-								<span for="">Location Map Lattitude</span>
+								<span for="">Crime Scene title</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
 								<input
 									className="form-control1"
 									type="number"
-									name="location_map_longitude"
+									name="lattitude"
 									id="discount"
 									// onChange={handleChange}
 									required
 								/>
-								<span for="">Location Map Longitude</span>
+								<span for="">Lattitude</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<input
+									className="form-control1"
+									type="number"
+									name="longitude"
+									id="discount"
+									// onChange={handleChange}
+									required
+								/>
+								<span for="">Longitude</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
 								<input
 									className="form-control1"
 									type="text"
-									name="crime_description"
+									name="description"
 									id="paid"
 									// onChange={handleChange}
 									required
 								/>
-								<span for="">Crime Description</span>
+								<span for="">Description</span>
 								<span className="border"></span>
 							</label>
 
 							<button className="button">
-								Add Crime Record
+								Post Crime Issue
 								<i className="zmdi zmdi-arrow-right"></i>
 							</button>
 						</form>
@@ -199,4 +211,4 @@ const AddPayments = () => {
 	);
 };
 
-export default AddPayments;
+export default CrimeIssue;

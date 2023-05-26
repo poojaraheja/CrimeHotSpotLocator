@@ -5,7 +5,7 @@ import { Fragment } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-const AddPayments = () => {
+const CrimeLocation = () => {
 	let history = useNavigate();
 	const [Inputs, setInputs] = useState({});
 
@@ -106,32 +106,7 @@ const AddPayments = () => {
 								</div>
 							</div>
 
-							<h3>Add Crime Record</h3>
-							<label className="form-group">
-								<input
-									type="text"
-									name="crimetitle"
-									id="email"
-									// onChange={handleChange}
-									className="form-control1"
-									required
-								/>
-								<span style={{ color: "#00ade6" }}>Crime Title</span>
-								<span className="border"></span>
-							</label>
-
-							<label className="form-group">
-								<input
-									type="text"
-									name="crimeaddress"
-									id="email"
-									// onChange={handleChange}
-									className="form-control1"
-									required
-								/>
-								<span for="">Crime Address</span>
-								<span className="border"></span>
-							</label>
+							<h3>Find City Crime Location</h3>
 
 							<label className="form-group">
 								<select
@@ -147,48 +122,46 @@ const AddPayments = () => {
 									<option value="Gambling">Gambling</option>
 									<option value="Chori">Chori</option>
 								</select>
-								<span for="">Crime Type</span>
+								<span for="">Select Country</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
-								<input
-									className="form-control1"
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
 									type="number"
-									// onChange={handleChange}
-									name="location_map_latitude"
-									id="amount_to_pay"
-									required
-								/>
-								<span for="">Location Map Lattitude</span>
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select State</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
-								<input
-									className="form-control1"
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
 									type="number"
-									name="location_map_longitude"
-									id="discount"
-									// onChange={handleChange}
-									required
-								/>
-								<span for="">Location Map Longitude</span>
-								<span className="border"></span>
-							</label>
-							<label className="form-group">
-								<input
-									className="form-control1"
-									type="text"
-									name="crime_description"
-									id="paid"
-									// onChange={handleChange}
-									required
-								/>
-								<span for="">Crime Description</span>
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select City</span>
 								<span className="border"></span>
 							</label>
 
 							<button className="button">
-								Add Crime Record
+								Find City Crime Location
 								<i className="zmdi zmdi-arrow-right"></i>
 							</button>
 						</form>
@@ -199,4 +172,4 @@ const AddPayments = () => {
 	);
 };
 
-export default AddPayments;
+export default CrimeLocation;

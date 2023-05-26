@@ -7,6 +7,8 @@ import Leads from "./components/Leads";
 import { Navigate } from "react-router-dom";
 import Customer from "./components/Customer";
 import AddCrimeRecord from "./components/AddCrimeRecord";
+import CrimeIssue from "./components/CrimeIssue";
+import CrimeLocation from "./components/CrimeLocation";
 function App() {
 	return (
 		<div>
@@ -43,6 +45,14 @@ function App() {
 					<Route
 						path="/addcrimerecord"
 						element={<AddCrimeRecord />}
+					/>
+					<Route
+						path="/crimeissue"
+						element={<CrimeIssue />}
+					/>
+					<Route
+						path="/crimelocation"
+						element={<CrimeLocation />}
 					/>
 				</Routes>
 			</Router>
