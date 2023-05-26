@@ -31,7 +31,7 @@ const Customer = () => {
 			email: sessionStorage.getItem("email"),
 		};
 		axios
-			.post("http://localhost:80/crime_api/customer.php", sendData)
+			.post("http://localhost:80/crime_api/records.php", sendData)
 			.then((result) => {
 				document.getElementById("customer_table").innerHTML = result.data;
 			});
