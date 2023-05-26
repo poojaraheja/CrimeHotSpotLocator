@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
@@ -73,6 +74,7 @@ const Login = () => {
 						<img
 							className="side-img"
 							src="img-1.gif"
+							alt="logo"
 						/>
 					</div>
 					<div className="main-box-login">
@@ -81,7 +83,7 @@ const Login = () => {
 								<div className="col-md-12 text-center">
 									<a
 										className="navbar-brand"
-										href="#"></a>
+										href="/home"></a>
 									<h1>Login</h1>
 									<hr />
 								</div>

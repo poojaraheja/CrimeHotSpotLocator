@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { Fragment } from "react";
+import { useState } from "react";
+// import { Fragment } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -9,43 +8,35 @@ const AddPayments = () => {
 	let history = useNavigate();
 	const [Inputs, setInputs] = useState({});
 
-	useEffect(() => {
-		const sendData = {
-			email: sessionStorage.getItem("email"),
-		};
+	const sendData = {
+		email: sessionStorage.getItem("email"),
+	};
 
-		axios
-			.post("http://localhost:80/crime_api/addcrimerecord.php", sendData)
-			.then((result) => {
-				if (result.data.error === 1) {
-					alert("No Customer Detected, Please Navigate Correctly");
-					history("/login");
-				} else {
-					document.getElementById("name").value = result.data.name;
-				}
-			});
-	}, []);
+	axios
+		.post("http://localhost:80/crime_api/addcrimerecord.php", sendData)
+		.then((result) => {
+			if (result.data.error === 1) {
+				alert("No Customer Detected, Please Navigate Correctly");
+				history("/login");
+			} else {
+				document.getElementById("name").value = result.data.name;
+			}
+		});
 
-	// const handleChange = (e) => {
-	// 	const name = e.target.name;
-	// 	const value = e.target.value;
-	// 	setInputs((values) => ({
-	// 		admin_email: sessionStorage.getItem("email"),
-	// 		payment_id: sessionStorage.getItem("payment_id"),
-	// 		mode: document.getElementById("mode").value,
-	// 		name: document.getElementById("name").value,
-
-	// 		...values,
-	// 		// admin_email: sessionStorage.getItem("email"),
-
-	// 		[name]: value,
-	// 	}));
-	// };
+	const handleChange = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+		setInputs((values) => ({
+			...values,
+			mode: sessionStorage.getItem("mode"),
+			[name]: value,
+		}));
+	};
 	const submitForm = (e) => {
 		e.preventDefault();
 
 		axios
-			.post("http://localhost:80/Crime/addcrimerecord.php", Inputs)
+			.post("http://localhost:80/crime_api/addcrimerecord.php", Inputs)
 			.then((result) => {
 				if (result.data.create === 1) {
 					alert("Customer created successfully!");
@@ -112,7 +103,7 @@ const AddPayments = () => {
 									type="text"
 									name="crimetitle"
 									id="email"
-									// onChange={handleChange}
+									onChange={handleChange}
 									className="form-control1"
 									required
 								/>
@@ -125,7 +116,7 @@ const AddPayments = () => {
 									type="text"
 									name="crimeaddress"
 									id="email"
-									// onChange={handleChange}
+									onChange={handleChange}
 									className="form-control1"
 									required
 								/>
@@ -154,7 +145,7 @@ const AddPayments = () => {
 								<input
 									className="form-control1"
 									type="number"
-									// onChange={handleChange}
+									onChange={handleChange}
 									name="location_map_latitude"
 									id="amount_to_pay"
 									required
@@ -168,7 +159,7 @@ const AddPayments = () => {
 									type="number"
 									name="location_map_longitude"
 									id="discount"
-									// onChange={handleChange}
+									onChange={handleChange}
 									required
 								/>
 								<span for="">Location Map Longitude</span>
@@ -180,7 +171,7 @@ const AddPayments = () => {
 									type="text"
 									name="crime_description"
 									id="paid"
-									// onChange={handleChange}
+									onChange={handleChange}
 									required
 								/>
 								<span for="">Crime Description</span>
