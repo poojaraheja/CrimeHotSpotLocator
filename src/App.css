@@ -699,7 +699,7 @@ div.lead_table {
 }
 
 .footer {
-	background-image: url("footer_back.svg");
+	/* background-image: url("footer_back.svg"); */
 }
 input,
 h3 {

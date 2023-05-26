@@ -28,8 +28,8 @@ const AddPayments = () => {
 		const value = e.target.value;
 		setInputs((values) => ({
 			...values,
-			mode: sessionStorage.getItem("mode"),
 			[name]: value,
+			mode: document.getElementById("name").value,
 		}));
 	};
 	const submitForm = (e) => {

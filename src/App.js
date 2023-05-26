@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Leads from "./components/Leads";
+// import Leads from "./components/Leads";
 import { Navigate } from "react-router-dom";
 import Customer from "./components/Customer";
 import AddCrimeRecord from "./components/AddCrimeRecord";
@@ -22,7 +22,7 @@ function App() {
 						path="/login"
 						element={<Login />}
 					/>
-
+					{/* 
 					<Route
 						exact
 						path="/lead"
@@ -36,7 +36,7 @@ function App() {
 								/>
 							)
 						}
-					/>
+					/> */}
 
 					<Route
 						path="/records"
