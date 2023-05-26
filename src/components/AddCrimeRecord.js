@@ -2,8 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Fragment } from "react";
-import DashHeader from "./DashHeader";
-import Sidebar from "../Sidebar";
+
 import { useNavigate } from "react-router-dom";
 
 const AddPayments = () => {
@@ -58,15 +57,7 @@ const AddPayments = () => {
 	};
 	return (
 		<div>
-			<div className="dashheader">
-				<DashHeader />
-			</div>
 			<div>
-				<div className="slidebar">
-					<Fragment>
-						<Sidebar />
-					</Fragment>
-				</div>
 				<div className="wrapper">
 					<div className="inner">
 						<form onSubmit={submitForm}>
