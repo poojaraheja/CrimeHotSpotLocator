@@ -49,7 +49,7 @@ const Login = () => {
 			};
 
 			axios
-				.post("http://localhost:80/Crime/login.php", sendData)
+				.post("http://localhost:80/crime_api/login.php", sendData)
 				.then((result) => {
 					if (result.data.logged === 1) {
 						sessionStorage.setItem("email", result.data.email);

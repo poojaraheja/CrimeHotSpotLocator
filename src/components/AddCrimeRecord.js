@@ -16,7 +16,7 @@ const AddPayments = () => {
 		};
 
 		axios
-			.post("http://localhost:80/crime/addcrimerecord.php", sendData)
+			.post("http://localhost:80/crime_api/addcrimerecord.php", sendData)
 			.then((result) => {
 				if (result.data.error === 1) {
 					alert("No Customer Detected, Please Navigate Correctly");
