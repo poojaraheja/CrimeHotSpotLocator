@@ -12,41 +12,41 @@ const AddPayments = () => {
 
 	useEffect(() => {
 		const sendData = {
-			payment_id: sessionStorage.getItem("payment_id"),
+			email: sessionStorage.getItem("email"),
 		};
 
 		axios
-			.post("http://localhost:80/CRM-api/paymentinfo.php", sendData)
+			.post("http://localhost:80/crime/addcrimerecord.php", sendData)
 			.then((result) => {
 				if (result.data.error === 1) {
 					alert("No Customer Detected, Please Navigate Correctly");
-					history("/customer");
+					history("/login");
 				} else {
 					document.getElementById("name").value = result.data.name;
 				}
 			});
 	}, []);
 
-	const handleChange = (e) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		setInputs((values) => ({
-			admin_email: sessionStorage.getItem("email"),
-			payment_id: sessionStorage.getItem("payment_id"),
-			mode: document.getElementById("mode").value,
-			name: document.getElementById("name").value,
+	// const handleChange = (e) => {
+	// 	const name = e.target.name;
+	// 	const value = e.target.value;
+	// 	setInputs((values) => ({
+	// 		admin_email: sessionStorage.getItem("email"),
+	// 		payment_id: sessionStorage.getItem("payment_id"),
+	// 		mode: document.getElementById("mode").value,
+	// 		name: document.getElementById("name").value,
 
-			...values,
-			// admin_email: sessionStorage.getItem("email"),
+	// 		...values,
+	// 		// admin_email: sessionStorage.getItem("email"),
 
-			[name]: value,
-		}));
-	};
+	// 		[name]: value,
+	// 	}));
+	// };
 	const submitForm = (e) => {
 		e.preventDefault();
 
 		axios
-			.post("http://localhost:80/CRM-api/addpayment.php", Inputs)
+			.post("http://localhost:80/Crime/addcrimerecord.php", Inputs)
 			.then((result) => {
 				if (result.data.create === 1) {
 					alert("Customer created successfully!");
@@ -115,47 +115,33 @@ const AddPayments = () => {
 								</div>
 							</div>
 
-							<h3>Add Payment</h3>
-							<span style={{ color: "#00ade6" }}>Customer Name</span>
+							<h3>Add Crime Record</h3>
+							<label className="form-group">
+								<input
+									type="text"
+									name="crimetitle"
+									id="email"
+									// onChange={handleChange}
+									className="form-control1"
+									required
+								/>
+								<span style={{ color: "#00ade6" }}>Crime Title</span>
+								<span className="border"></span>
+							</label>
 
 							<label className="form-group">
 								<input
 									type="text"
-									className="form-control1"
-									name="name"
-									id="name"
-									onChange={handleChange}
-									required
-									disabled
-								/>
-
-								<span className="border"></span>
-							</label>
-							<label className="form-group">
-								<input
-									type="email"
-									name="email"
+									name="crimeaddress"
 									id="email"
-									onChange={handleChange}
+									// onChange={handleChange}
 									className="form-control1"
 									required
 								/>
-								<span for="">Email</span>
+								<span for="">Crime Address</span>
 								<span className="border"></span>
 							</label>
-							<span style={{ color: "#00ade6" }}>Payment Date</span>
-							<label className="form-group">
-								<input
-									className="form-control1"
-									type="date"
-									onChange={handleChange}
-									name="date"
-									id="date"
-									required
-								/>
-								<span for=""></span>
-								<span className="border"></span>
-							</label>
+
 							<label className="form-group">
 								<select
 									className="form-control1 "
@@ -166,65 +152,52 @@ const AddPayments = () => {
 									required>
 									{" "}
 									<option value=""></option>
-									<option value="Cash">Cash</option>
-									<option value="Paytm">Paytm</option>
-									<option value="NEFT">NEFT</option>
-									<option value="Cheque">Cheque</option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
 								</select>
-								<span for="">Payment Mode</span>
+								<span for="">Crime Type</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
 								<input
 									className="form-control1"
 									type="number"
-									onChange={handleChange}
-									name="amount_to_pay"
+									// onChange={handleChange}
+									name="location_map_latitude"
 									id="amount_to_pay"
 									required
 								/>
-								<span for="">Amount To Pay</span>
+								<span for="">Location Map Latitude</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
 								<input
 									className="form-control1"
 									type="number"
-									name="discount"
+									name="location_map_longitude"
 									id="discount"
-									onChange={handleChange}
+									// onChange={handleChange}
 									required
 								/>
-								<span for="">Discount ($)</span>
+								<span for="">Location Map Longitude</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
 								<input
 									className="form-control1"
-									type="number"
-									name="paid"
+									type="text"
+									name="crime_description"
 									id="paid"
-									onChange={handleChange}
+									// onChange={handleChange}
 									required
 								/>
-								<span for="">Paid</span>
-								<span className="border"></span>
-							</label>
-							<label className="form-group">
-								<input
-									className="form-control1"
-									type="number"
-									name="remaining_balance"
-									id="remaining_balance"
-									onChange={handleChange}
-									required
-								/>
-								<span for="">Remaining Balance</span>
+								<span for="">Crime Description</span>
 								<span className="border"></span>
 							</label>
 
 							<button className="button">
-								Add Payment
+								Add Crime Record
 								<i className="zmdi zmdi-arrow-right"></i>
 							</button>
 						</form>

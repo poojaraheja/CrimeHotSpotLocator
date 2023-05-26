@@ -53,7 +53,7 @@ const Login = () => {
 				.then((result) => {
 					if (result.data.logged === 1) {
 						sessionStorage.setItem("email", result.data.email);
-						history("/");
+						history("/addcrimerecord");
 					} else {
 						if (result.data.password === 0) {
 							alert("Incorrect password. Please try Again");

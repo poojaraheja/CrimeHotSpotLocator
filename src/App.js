@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Leads from "./components/Leads";
 import { Navigate } from "react-router-dom";
 import Customer from "./components/Customer";
+import AddCrimeRecord from "./components/AddCrimeRecord";
 function App() {
 	return (
 		<div>
@@ -38,6 +39,10 @@ function App() {
 					<Route
 						path="/customer"
 						element={<Customer />}
+					/>
+					<Route
+						path="/addcrimerecord"
+						element={<AddCrimeRecord />}
 					/>
 				</Routes>
 			</Router>
