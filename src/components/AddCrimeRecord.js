@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const AddPayments = () => {
 	let history = useNavigate();
+	if (sessionStorage.getItem("token")) {
+	} else {
+		history("/login");
+	}
 	const [Inputs, setInputs] = useState({});
 
 	const handleChange = (e) => {
@@ -62,24 +66,6 @@ const AddPayments = () => {
 								<span for="">Crime Address</span>
 								<span className="border"></span>
 							</label>
-
-							{/* <label className="form-group">
-								<select
-									className="form-control1 "
-									// aria-label="Default select example"
-									name="mode"
-									id="mode"
-									type="number"
-									required>
-									{" "}
-									<option value=""></option>
-									<option value="Chain Snatching">Chain Snatching</option>
-									<option value="Gambling">Gambling</option>
-									<option value="Chori">Chori</option>
-								</select>
-								<span for="">Crime Type</span>
-								<span className="border"></span>
-							</label> */}
 							<label className="form-group">
 								<input
 									type="text"
