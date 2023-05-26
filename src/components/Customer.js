@@ -1,7 +1,6 @@
 import React from "react";
 import { Fragment } from "react";
-import DashHeader from "./DashHeader";
-import Sidebar from "../Sidebar";
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -38,15 +37,7 @@ const Customer = () => {
 	});
 	return (
 		<div>
-			<div className="dashheader">
-				<DashHeader />
-			</div>
 			<div>
-				<div className="slidebar">
-					<Fragment>
-						<Sidebar />
-					</Fragment>
-				</div>
 				<div className="wrapper">
 					<div
 						className="leadbox"
