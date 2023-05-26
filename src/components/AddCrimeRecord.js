@@ -8,28 +8,12 @@ const AddPayments = () => {
 	let history = useNavigate();
 	const [Inputs, setInputs] = useState({});
 
-	const sendData = {
-		email: sessionStorage.getItem("email"),
-	};
-
-	axios
-		.post("http://localhost:80/crime_api/addcrimerecord.php", sendData)
-		.then((result) => {
-			if (result.data.error === 1) {
-				alert("No Customer Detected, Please Navigate Correctly");
-				history("/login");
-			} else {
-				document.getElementById("name").value = result.data.name;
-			}
-		});
-
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
 		setInputs((values) => ({
 			...values,
 			[name]: value,
-			// mode: document.getElementById("name").value,
 		}));
 	};
 	const submitForm = (e) => {
@@ -52,51 +36,6 @@ const AddPayments = () => {
 				<div className="wrapper">
 					<div className="inner">
 						<form onSubmit={submitForm}>
-							<button
-								style={{
-									display: "none",
-								}}
-								id="clickButton"
-								type="button"
-								className="btn btn-primary"
-								data-bs-toggle="modal"
-								data-bs-target="#staticBackdrop"></button>
-
-							<div
-								className="modal fade"
-								id="staticBackdrop"
-								data-bs-backdrop="static"
-								data-bs-keyboard="false"
-								tabindex="-1"
-								aria-labelledby="staticBackdropLabel"
-								aria-hidden="true">
-								<div className="modal-dialog">
-									<div className="modal-content">
-										<div className="modal-header">
-											<h1
-												className="modal-title fs-5"
-												id="staticBackdropLabel">
-												Success
-											</h1>
-											<button
-												type="button"
-												className="btn-close"
-												data-bs-dismiss="modal"
-												aria-label="Close"></button>
-										</div>
-										<div className="modal-body">Lead Created Successfully!</div>
-										<div className="modal-footer">
-											<button
-												type="button"
-												className="btn btn-secondary"
-												data-bs-dismiss="modal">
-												Close
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
 							<h3>Add Crime Record</h3>
 							<label className="form-group">
 								<input
@@ -124,7 +63,7 @@ const AddPayments = () => {
 								<span className="border"></span>
 							</label>
 
-							<label className="form-group">
+							{/* <label className="form-group">
 								<select
 									className="form-control1 "
 									// aria-label="Default select example"
@@ -139,6 +78,18 @@ const AddPayments = () => {
 									<option value="Chori">Chori</option>
 								</select>
 								<span for="">Crime Type</span>
+								<span className="border"></span>
+							</label> */}
+							<label className="form-group">
+								<input
+									type="text"
+									name="mode"
+									id="mode"
+									onChange={handleChange}
+									className="form-control1"
+									required
+								/>
+								<span for="">Crime Mode</span>
 								<span className="border"></span>
 							</label>
 							<label className="form-group">
