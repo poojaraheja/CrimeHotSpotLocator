@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Fragment } from "react";
-
+import Header from "../Header";
 import { useNavigate } from "react-router-dom";
 
 const CrimeLocation = () => {
@@ -57,6 +57,7 @@ const CrimeLocation = () => {
 	};
 	return (
 		<div>
+			<Header />
 			<div>
 				<div className="wrapper">
 					<div className="inner">

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 // import { Fragment } from "react";
-
+import Header from "../Header";
 import { useNavigate } from "react-router-dom";
 
 const AddPayments = () => {
@@ -32,6 +32,7 @@ const AddPayments = () => {
 	};
 	return (
 		<div>
+			<Header />
 			<div>
 				<div className="wrapper">
 					<div className="inner">
@@ -126,6 +127,57 @@ const AddPayments = () => {
 									required
 								/>
 								<span for="">Crime Description</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
+									type="number"
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select Country</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
+									type="number"
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select State</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
+									type="number"
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select City</span>
 								<span className="border"></span>
 							</label>
 

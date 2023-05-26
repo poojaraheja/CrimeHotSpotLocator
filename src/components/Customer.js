@@ -1,6 +1,6 @@
 import React from "react";
 // import { Fragment } from "react";
-
+import Header from "../Header";
 // import { useEffect } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
@@ -14,6 +14,7 @@ const Customer = () => {
 
 	return (
 		<div>
+			<Header />
 			<div>
 				<div className="wrapper">
 					<div

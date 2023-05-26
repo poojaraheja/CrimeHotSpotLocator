@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Fragment } from "react";
-
+import Header from "../Header";
 import { useNavigate } from "react-router-dom";
 
 const CrimeIssue = () => {
@@ -57,6 +57,7 @@ const CrimeIssue = () => {
 	};
 	return (
 		<div>
+			<Header />
 			<div>
 				<div className="wrapper">
 					<div className="inner">
@@ -196,6 +197,57 @@ const CrimeIssue = () => {
 									required
 								/>
 								<span for="">Description</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
+									type="number"
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select Country</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
+									type="number"
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select State</span>
+								<span className="border"></span>
+							</label>
+							<label className="form-group">
+								<select
+									className="form-control1 "
+									// aria-label="Default select example"
+									name="mode"
+									id="mode"
+									type="number"
+									required>
+									{" "}
+									<option value=""></option>
+									<option value="Chain Snatching">Chain Snatching</option>
+									<option value="Gambling">Gambling</option>
+									<option value="Chori">Chori</option>
+								</select>
+								<span for="">Select City</span>
 								<span className="border"></span>
 							</label>
 
