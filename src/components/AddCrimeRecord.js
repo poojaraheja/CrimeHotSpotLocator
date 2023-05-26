@@ -29,7 +29,7 @@ const AddPayments = () => {
 		setInputs((values) => ({
 			...values,
 			[name]: value,
-			mode: document.getElementById("name").value,
+			// mode: document.getElementById("name").value,
 		}));
 	};
 	const submitForm = (e) => {
